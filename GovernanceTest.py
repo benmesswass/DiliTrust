@@ -7,7 +7,20 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 
 driver.get("https://gov.dilitrust.com/")
-time.sleep(2)
-elem = driver.find_element(By.TAG_NAME, "input")
-elem.send_keys("wassim")
+time.sleep(5)
+
+mailField = driver.find_element(By.ID, "login-name-input")
+mailField.send_keys("wassimbenmessaoud@gmail.com")
+
+loginButton = driver.find_element(By.ID, "login-button-button")
+loginButton.click()
+
+passwordField = driver.find_element(By.ID, "login-password-input")
+passwordField.send_keys("wassimbenmessaoud")
+
+loginButton.click()
+
+errorMessage = driver.find_element(By.ID, "login-form-error-0-message")
+assert (errorMessage.getAttribute("data-v-4d394ef5") == "Désolé, e-mail ou mot de passe non reconnu. ")
+
 driver.close()
