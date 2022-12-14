@@ -3,8 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-#driver = webdriver.Firefox("/Users/wassimzenity/Downloads")
-driver = webdriver.Chrome()
+driver = webdriver.Chrome("/Users/wassimzenity/IdeaProjects/chromedriver")
 
 driver.get("https://gov.dilitrust.com/")
 time.sleep(5)
